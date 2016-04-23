@@ -46,10 +46,11 @@ body {
   position: absolute;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 70%;
   background-position: center 40%;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  bottom: 0;}
 
 #galaxy {
   position: relative;
@@ -154,6 +155,9 @@ body {
 
 #moon {
   z-index: 7; }
+
+#rocket {
+  z-index: 11; }
 
 #mars {
   z-index: 6; }
@@ -335,6 +339,15 @@ body {
 #earth .orbit {
   animation-duration: 0.89764s; }
 
+#rocket .pos,
+#rocket .planet,
+#rocket.orbit {
+  animation-duration: 12.00021s; }
+
+#rocket .orbit .pos,
+#rocket .orbit {
+  animation-duration: 0.89764s; }
+
 #mars .pos,
 #mars .planet,
 #mars.orbit {
@@ -378,6 +391,9 @@ body {
 .scale-stretched #earth .moon {
   font-size: 1.2em; }
 
+.scale-stretched #rocket .planet {
+  font-size: 3.92em; }
+
 .scale-stretched #mars .planet {
   font-size: 2.9em; }
 
@@ -414,6 +430,9 @@ body {
 .scale-d #earth .moon {
   font-size: 0.08226em; }
 
+.scale-d #rocket .planet {
+  font-size: 0.38226em; }
+
 .scale-d #mars .planet {
   font-size: 0.20334em; }
 
@@ -444,6 +463,9 @@ body {
 
 .scale-s #earth .moon {
   font-size: 0.8226em; }
+
+.scale-s #rocket .planet {
+  font-size: 3.8226em; }
 
 .scale-s #mars .planet {
   font-size: 2.0334em; }
@@ -484,6 +506,12 @@ body {
   height: 6em;
   margin-top: -3em;
   margin-left: -3em; }
+
+.scale-stretched #rocket.orbit {
+  width: 56em;
+  height: 56em;
+  margin-top: -28em;
+  margin-left: -28em; }
 
 .scale-stretched #mars.orbit {
   width: 72em;
@@ -530,6 +558,12 @@ body {
   margin-left: -23.67869em; }
 
 .scale-d #earth.orbit {
+  width: 49.50959em;
+  height: 49.50959em;
+  margin-top: -24.75479em;
+  margin-left: -24.75479em; }
+
+.scale-d #rocket.orbit {
   width: 49.50959em;
   height: 49.50959em;
   margin-top: -24.75479em;
@@ -591,6 +625,12 @@ body {
   margin-top: -236.6524em;
   margin-left: -236.6524em; }
 
+.scale-s #rocket.orbit {
+  width: 473.3048em;
+  height: 473.3048em;
+  margin-top: -236.6524em;
+  margin-left: -236.6524em; }
+
 .scale-s #mars.orbit {
   width: 489.3048em;
   height: 489.3048em;
@@ -645,6 +685,9 @@ body {
 .set-speed #earth dl.infos dd:after {
   content: '107,218 km/h'; }
 
+.set-speed #rocket dl.infos dd:after {
+  content: '107,218 km/h'; }
+
 .set-speed #mars dl.infos dd:after {
   content: '86,677 km/h'; }
 
@@ -674,6 +717,9 @@ body {
   content: '38,024 km'; }
 
 .set-size #earth dl.infos dd:after {
+  content: '40,030 km'; }
+
+.set-size #rocket dl.infos dd:after {
   content: '40,030 km'; }
 
 .set-size #mars dl.infos dd:after {
@@ -708,6 +754,9 @@ body {
   content: '108,209,475 km'; }
 
 .set-distance #earth dl.infos dd:after {
+  content: '149,598,262 km'; }
+
+.set-distance #rocket dl.infos dd:after {
   content: '149,598,262 km'; }
 
 .set-distance #mars dl.infos dd:after {
@@ -840,6 +889,45 @@ body {
   box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
   /* RIGHT */ }
 
+
+/* --------------------------------------------------------------------------- earth ; pos: Right */
+#rocket .pos {
+  left: 100%;
+  top: 52%; }
+
+#rocket .planet {
+  animation-name: shadow-rocket; }
+
+@keyframes shadow-rocket {
+  0% {
+    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+    /* RIGHT */ }
+
+  25% {
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+    /* TOP */ }
+
+  50% {
+    box-shadow: inset 4px 0 2px rgba(0, 0, 0, 0.5);
+    /* LEFT */ }
+
+  75% {
+    box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);
+    /* BOTTOM */ }
+
+  75.01% {
+    box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);
+    /* BOTTOM */ }
+
+  100% {
+    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+    /* RIGHT */ } }
+
+.scaled.view-2D #rocket .planet,
+.scaled.view-3D #rocket .planet {
+  box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+  /* RIGHT */ }
+
 /* --------------------------------------------------------------------------- moon */
 #earth .orbit .pos {
   left: 100%;
@@ -964,7 +1052,7 @@ body {
 
 #saturn .ring           { animation-name:     shadow-saturn-ring; }
 
-@keyframes 
+@keyframes
 shadow-saturn-ring{ 0%   { box-shadow: inset -16px  0      4px   rgba(20, 40, 50, 0.45); opacity: .4; }
                   25%    { box-shadow: inset -5px   -30px   12px  rgba(20, 40, 50, 0.3);  opacity: 1; }
                   25.01% { box-shadow: inset 5px    -30px   12px  rgba(20, 40, 50, 0.3);  opacity: 1; }
@@ -1053,9 +1141,9 @@ shadow-saturn-ring{ 0%   { box-shadow: inset -16px  0      4px   rgba(20, 40, 50
   box-shadow: inset -12px 0 5px rgba(0, 0, 0, 0.5);
   /* RIGHT */ }
 
-/* --------------------------------------------------------------------------- DEBUG 
-.pos, 
-.planet, 
+/* --------------------------------------------------------------------------- DEBUG
+.pos,
+.planet,
 .orbit,
 .ring { animation-duration: 20s!important; }
 
@@ -1118,6 +1206,7 @@ dl.infos dd span:after {
 .mercury #mercury .infos,
 .venus #venus .infos,
 .earth #earth .infos,
+.rocket #rocket .infos,
 .mars #mars .infos,
 .jupiter #jupiter .infos,
 .saturn #saturn .infos,
@@ -1130,6 +1219,7 @@ dl.infos dd span:after {
 .mercury #mercury.orbit,
 .venus #venus.orbit,
 .earth #earth.orbit,
+.rocket #rocket.orbit,
 .mars #mars.orbit,
 .jupiter #jupiter.orbit,
 .saturn #saturn.orbit,
@@ -1411,6 +1501,9 @@ body {
 #earth .moon {
   background-color: white; }
 
+#rocket .planet {}
+  /* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAA0CAYAAACdB4jyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABjtJREFUeNrEWE1sG0UUfms78W/sdeyU/ELsCGjTIDUpCKVV1ZRKVD2gtipQ1B4SbqhCarkioQZRuJYD6jUJErcWwg0aqqYgaItEZSBNBGpSQ5r+2Y7XdhrHdrzLm9nZzdpeu2vjqCutZnbmvffN+52ZBajxucY7xj7z2MZq5TfVwpTyOse8HIxgd6RWcFMNoBRQM0TARzYVGEF3YKOn4TkE31GNLEuVC6WgF5u74GxnL2Swv3dxBnpj//Jsrt+oIHMV2o5i887dRgecGDgAuePvgdg/CLeXE9B77zZY87nW/TZL4nJm/XrdTI2gRKNTpL/UaAfO5QFotNKX9JNWh0J6Bk3O19PH5/ClAl9dicHWhVsgzdwE6eY18M/PQGcqqtARmjNGBHIGtO3G5o52LGlugPHmTghJEvEvMXMxW+DDxFr4/2p8qnjAjUBHIwvQ/2heDxSK0q16jZlv7yhmpppuCcAlTyvM2d3yIrKrqPUi9D8sWITAtBZqTafDWtDjzw/KgCSofFtks8cewXWM9HlczJt//6yA84x3vFbgYaWjgHI7dwHXNyBHNTFZNkMDLfLbL3Dhhd1wYm5aYTlUCdj0hKAaUgoGBUVAbmBQBaUP9m2v7Ibg4C6IODww09KtWqtSalUKriGlM8U/I2vXt7OEqKnBDIefbYY9+/fR77/8XcWuqhr4kDZ9ZBR3AYHf1gDHAn7aupu9dCzdYIVsY2OJjKo0lrzespNWs4lqStriRzSZwSbzDlUFzPzLS4Eg/e7MpuWJ+4sqzcFObwHo0vw8bR1ilrbNvX00utHP3dVoLG9xdjttjsZkQPEaRixG8VaPHTocqjkhk07Dj5Pf0n7XWhxsa+lSWQbTSSa2ycCkPp+I/gNfEfCvv4SmA69D0vaiqumv31+C5PIy9KSjEIzdkwWzRTNZk0aBn6MaBoNguiwPfLR0C9Ywgi9CJ9y4cAFuFDFsXX0ELwmL4E3E6beHuUmRZRRY9gtuAsrTIIrwafgP2NMShSmsUlGM9ISYB4uUh7ZsErYkYuCLx8CEdLqyjFYuqa0NVZYKxgj4Gw/vwmuxBzBrtcF3GFyW9XXqU9IW8EsiOFHG4/v3jUW17/T5UZoGKBgkUZfJiSDtj1PAC3FwraRKQOVIFMFis9GUYjL1NcZJUt6+UXMPzczlxbJ5PBfogQWrFYKzM/oWQ16Np86g/L3YHol9flJQNcbBIbb9DWlsBZBfLwt89ujbMPXWMcjY7GWA88UWoxgMSzX1FWX7M3mlDeD2Dl2hP/RuhyWsTAR0YXufLo2ro0MNTlWmjHGl0MfYM7dKYG7ZAOZyuqcLmNq2fcPkAy/r0ojZHCosyyIyiWxtRNEuh7ucpUsEk1smTKImHJqJy2H58/tLhN7YyFG4G+wpmbf7W0AkvLh4xRVENsHg2I5qaj3/xYh2gGqhpBKuGlyuEsFLFTYPukUjj5jN0pSKtrdvnLOYggTTRG8AehU7laSnC/B4q76QWXke8sibTabKJfCY7iYx14arXFnB6o/APl/JvLtwEyg1tc8P+UwWspjjkbb2KrZFpcAjOOdwlMxv01Qjdzxeamrkya3I2mbsduPASvBw0QitQOB2FwHf0wAvF5oZaSXkWY1E5HgI9BgGDi87ne/SXiwGgGblfP4iU69tHH80i1DMvI486eUY/V51uYiscCVgci7d9+Dk+4GfRj8Zp8QJATgC4nQWMHVotLQW+bsBafPpNcgItDKGZ1EWkUlkMwy1VhOQCZycLlrUtCQkRmB2FiShwI8hTzqtHhYs2VxIe3iIzPwJNt4LudVV0AIx+dOYSqRkDnMVztWH2aZBBE8Qpqb4YwqCzNqL3D5l0Xi+GmILGGbtEbzGTNbyk0XdxFPD/Ci+6jeCS+zl2TyPr/qbotwhz9BtETUMM6E72L1Xe/cNMRMqF7PT5JaItHT3qcc1VXsj0F4/w1ofau5Zw/X8I7BXY3Jlz/5dSRNiZs3ZytDfH6N/fQSNlgWm1oAJbL/trifwB8zcEwo4+nZSc14Os7Qkfv64bqZumhDCev2isavsc3wzfimGn+QOXIRQb+DpJwBv/t/bMk+omoVVCyxUiANhs4BDKDz0NEydMEBz9Wn4GIpKaMXnPwEGAJuRVubbe06OAAAAAElFTkSuQmCC); }
+*/
 #mars .planet {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAAGBQTFRFsW89lWA2jVwzsm8+qGo72oVJrW08h1gxlWA15IpMrW09jlw0l2E2nGM3v3ZC3YdK3odKyHtE75BP8JFQ8JFQ8JFQ8JFQ8JFQw3hD8JFQ8JFQ8JFQ8JFQ8JFQ8JFQAAAAe3ooYQAAACB0Uk5Tk0+hrcTz6g7P5tkiYurz49bk79XR3vvm2PH26ezi2QCQ4vSgAAABm0lEQVQoz1VSWXaEMAzLLAw7ZHMSx0vvf8uaTtvX+icQYSRbch/vGrf7ftV0v43fV+59bNP+Oo6jtXAs0/YHWg1o4TxnqyG05bn+QOt0AUIRKWVV39qyvqF1f4VTFSqiZgWuerarz6D7KwyoqkI19k5UFYfjeUHbdJzEkLQS9cLCSELDsX24cVoCVYYMHXsphQk0Aw2v0W17OCv2CPwFIWnSBDAfmzOmSt0KmZhj1ZwERLU5N72GwsyIREwCKZtIsAe/uL3NpapW42ciMTWitXI8g9uDj/aCAEZoaqRHtf8ZmduPFAtW1kz2BWntXQRUo0FhTrVcKxLTZmNbi7Fd0NR8Vhsz5x6jZMHIrJrS3Nx98WAQ5lyJsXdGGxs0eeduS5Brs1+y2dZRe0EBajc3LuaHEKRks8qFIYrC0EZb79KM31qUbCO9l44mJWyXKY9mbMnkJzAeo0Ni/3hb+WynqDGkDJHNa/Okrd8BWJpPag1gHpdO5vL6G5tnC15rRBaI6sNj/Ru25Wjez3E+LTTbvxxaRB/PdtVj+4noJ91nOp3NTB6wAAAAAElFTkSuQmCC); }
 
@@ -1484,3 +1577,52 @@ body {
 @media screen and (min-width: 1600px) {
   .zoom-close .scale-d #solar-system {
     margin-left: -120%; } }
+
+
+
+
+/******************PRUEBAS*********************/
+.wrapper{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.wrapper #top{
+  position: absolute;
+  height: 75%;
+  width: 100%;
+  top: 0;
+}
+.wrapper #bottom{
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+}
+
+#infobar{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: 20%;
+  width: 100%;
+}
+#infobar .info-left{
+  float: left;
+  height: 100%;
+  width: 30%;
+  background-color: green;
+  opacity: 0.5;
+}
+#infobar .info-right{
+  float: right;
+  height: 100%;
+  width: 30%;
+  background-color: red;
+  opacity: 0.5;
+}
+
+#rocket .img{
+  transform: rotate(50deg);
+}
