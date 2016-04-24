@@ -180,16 +180,7 @@
           </div>
         </div>
         <div id="mars-big" class="rocket-hide">
-          <div id="mars" class="orbit">
-            <div class="pos">
-              <div class="planet">
-                <dl class="infos">
-                  <dt>Mars</dt>
-                  <dd><span></span></dd>
-                </dl>
-              </div>
-            </div>
-          </div>
+          <img src="./img/final.png" alt="rocket">
         </div>
       </div>
       <div id="bottom">
@@ -228,10 +219,6 @@
     };
     var stopAnimation = function(){
       $(".set-zoom").click();
-      setTimeout(function(){
-        // $('#universe').addClass('rocket-hide')
-        $('#mars-big').removeClass('rocket-hide')
-      }, 5000)
     }
 
     var chooseMars = function(){
@@ -243,6 +230,10 @@
         setTimeout(setRocket, 500);
         setTimeout(chooseMars, 4000);
         setTimeout(stopAnimation, 7750);
+        $("#mars").click(function(){
+          $('#universe').addClass('rocket-hide');
+          $('#mars-big').removeClass('rocket-hide');
+        });
 
         $('.timer').countTo({
           from: 0,

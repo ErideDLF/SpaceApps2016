@@ -1624,6 +1624,23 @@ body{
 }
 
 
+#mars-big{
+  z-index: 1;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 70%;
+  bottom: 0;
+}
+
+#mars-big img{
+  height: 97%;
+  width: auto;
+  margin: auto;
+  float: right;
+}
+
+
 #infobar{
   position: absolute;
   top: 50px;
