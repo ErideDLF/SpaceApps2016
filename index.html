@@ -90,10 +90,10 @@
                   </div>
                 </div>
               </div>
-              <div id="rocket" class="orbit">
+              <div id="rocket" class="rocket-hide">
                 <div class="pos">
-                  <div class="planet">
-                    <img src="./img/rocket_ruta.png" alt="rocket" height="30" width="15" />
+                  <div class="planet" style="height:30; width:51;">
+                    <!--<img src="./img/rocket_ruta.png" alt="rocket" height="30" width="15" />-->
                     <dl class="infos">
                       <dt>Rocket</dt>
                       <dd><span></span></dd>
@@ -161,6 +161,18 @@
             </div>
           </div>
         </div>
+        <div id="mars-big" class="rocket-hide">
+          <div id="mars" class="orbit">
+            <div class="pos">
+              <div class="planet">
+                <dl class="infos">
+                  <dt>Mars</dt>
+                  <dd><span></span></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="bottom"></div>
     </div>
@@ -172,6 +184,25 @@
     </script>
     <script src="js/prefixfree.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script>
+
+    var rocket = $("#rocket");
+    var setRocket = function() { rocket.removeClass("rocket-hide").addClass("orbit2"); };
+    var stopAnimation = function(){
+      $(".set-zoom").click();
+      setTimeout(function(){
+        $('#universe').addClass('rocket-hide')
+        $('#mars-big').removeClass('rocket-hide')
+      }, 5000)
+    }
+
+    $( document ).ready(function() {
+        console.log( "ready!" );
+        setTimeout(setRocket, 4700);
+        setTimeout(stopAnimation, 12700);
+
+    });
+    </script>
   </body>
 
 </html>
