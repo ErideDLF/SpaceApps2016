@@ -6,22 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title dir="ltr">3D CSS Solar System</title>
+    <title dir="ltr">SPACE CATS!!</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css">
   </head>
   <body class="opening hide-UI view-2D zoom-large data-close controls-close">
     <div id="navbar">
       <a id="toggle-data" href="#data"><i class="icon-data"></i>Data</a>
-      <h1>3D CSS Solar System</h1>
+      <h1>SPACE CATS!!</h1>
       <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controls</a>
     </div>
     <div id="infobar">
-      <div class="info-left">   </div>
-      <div class="info-right">   </div>
+      <div class="info-left">
+          <button class="red"><img src="./img/rocket.png" alt="rocket" height="30px" width="auto" ></button>
+          <button class="green"><img src="./img/sattt.png" alt="rocket" height="30px" width="auto" ></button>
+          <button class="blue"><img src="./img/system.png" alt="rocket" height="30px" width="auto" ></button>
+          <button class="orange"><img src="./img/jupiter.png" alt="rocket" height="30px" width="auto" ></button>
+      </div>
+      <div class="info-right">
+        <div class="numbers">
+          <ul>
+            <li><span>Destino: <span class="t-mars">Marte</span></span></li>
+            <li><span>Km Restantes: <span class="t-km"></span> Km</span></li>
+          </ul>
+        </div>
+        <div class="percent">
+          <ul>
+            <li><span class="p-text">COMPLETADO: </span></li>
+            <li><span class="p-timer"><span class="timer"></span> %</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="wrapper">
       <div id="top">
-        <div id="data">
+        <div id="data" class="rocket-hide">
           <a class="sun" title="sun" href="#sunspeed">Sun</a>
           <a class="mercury" title="mercury" href="#mercuryspeed">Mercury</a>
           <a class="venus" title="venus" href="#venusspeed">Venus</a>
@@ -32,7 +50,7 @@
           <a class="uranus" title="uranus" href="#uranusspeed">Uranus</a>
           <a class="neptune" title="neptune" href="#neptunespeed">Neptune</a>
         </div>
-        <div id="controls">
+        <div id="controls" class="rocket-hide">
           <label class="set-view">
             <input type="checkbox">
           </label>
@@ -174,9 +192,16 @@
           </div>
         </div>
       </div>
-      <div id="bottom"></div>
+      <div id="bottom">
+        <div id="cat-photo">
+          <img src="./img/SpaceCatMarine.jpg" alt="rocket" height="90%" width="auto" >
+        </div>
+        <div id="mission-text">
+          <p class="m-text"></p>
+        </div>
+      </div>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">
     if (typeof jQuery == 'undefined') {
       document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
@@ -184,22 +209,65 @@
     </script>
     <script src="js/prefixfree.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script src="js/jquery.countTo.js"></script>
     <script>
 
     var rocket = $("#rocket");
-    var setRocket = function() { rocket.removeClass("rocket-hide").addClass("orbit2"); };
+    var bottom = $("#bottom");
+    var earth = $("#earth .pos");
+    var setRocket = function() {
+      var rocket_pos = $("#rocket .pos");
+
+      rocket_pos.css({top: earth.position().top - 5, left: earth.position().left});
+      rocket.removeClass("rocket-hide").addClass("orbit2");
+      console.log('rocket!! ', rocket_pos, rocket_pos.position(), 'earth!', earth.position());
+    };
     var stopAnimation = function(){
       $(".set-zoom").click();
       setTimeout(function(){
-        $('#universe').addClass('rocket-hide')
+        // $('#universe').addClass('rocket-hide')
         $('#mars-big').removeClass('rocket-hide')
       }, 5000)
     }
 
+    var chooseMars = function(){
+      $(".mars").click();
+    }
+
     $( document ).ready(function() {
         console.log( "ready!" );
-        setTimeout(setRocket, 4700);
-        setTimeout(stopAnimation, 12700);
+        setTimeout(setRocket, 500);
+        setTimeout(chooseMars, 4000);
+        setTimeout(stopAnimation, 7750);
+
+        $('.timer').countTo({
+          from: 0,
+          to: 100,
+          speed: 7700,
+          formatter: function (value, options) {
+            return value.toFixed(options.decimals);
+          },
+          onUpdate: function (value) {
+            console.debug(this);
+          },
+          onComplete: function (value) {
+            console.debug(this);
+          }
+        });
+        $('.t-km').countTo({
+          from: 200000000,
+          to: 0.0,
+          speed: 7700,
+          formatter: function (value, options) {
+            return value.toFixed(options.decimals);
+          },
+          onUpdate: function (value) {
+            console.debug(this);
+          },
+          onComplete: function (value) {
+            console.debug(this);
+          }
+        });
 
     });
     </script>

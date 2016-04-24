@@ -380,7 +380,7 @@ body {
 #rocket .pos,
 #rocket .planet,
 #rocket.orbit2 {
-  animation-duration: 10.00021s; }
+  animation-duration: 7.50021s; }
 
 #mars .pos,
 #mars .planet,
@@ -542,7 +542,7 @@ body {
   margin-left: -3em; }
 
 .scale-stretched #rocket.orbit2 {
-  width: 64em;
+  width: 66em;
   height: 60em;
   margin-top: -28em;
   margin-left: -28em; }
@@ -924,10 +924,10 @@ body {
   /* RIGHT */ }
 
 
-/* --------------------------------------------------------------------------- earth ; pos: Right */
+/* --------------------------------------------------------------------------- earth ; pos: Right*/
 #rocket .pos {
-  left: 7%;
-  top: 15%; }
+  left: 95%;
+  top: 51%; }
 
 
 /* --------------------------------------------------------------------------- moon */
@@ -1612,10 +1612,13 @@ body {
 .wrapper #bottom{
   position: absolute;
   height: 20%;
-  width: 100%;
+  width: 99%;
   bottom: 0;
-  background-color: #fff;
+  background-color: rgba(0,255,0, .15);
+  border: 1px dashed green;
+  margin: 2px;
 }
+
 
 #infobar{
   position: absolute;
@@ -1623,22 +1626,116 @@ body {
   left: 0;
   height: 20%;
   width: 100%;
+  z-index: 150;
 }
 #infobar .info-left{
   float: left;
   height: 100%;
   width: 30%;
-  background-color: green;
-  opacity: 0.5;
+  background-color: rgba(255, 240, 60, 0.05);
+  border: 1px dashed yellow;
 }
+#infobar .info-left button{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  margin: 5px 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+#infobar .info-left button.red{
+  border: 1px dashed red;
+}
+
+#infobar .info-left button.green{
+  border: 1px dashed green;
+}
+
+#infobar .info-left button.blue{
+  border: 1px dashed blue;
+}
+
+#infobar .info-left button.orange{
+  border: 1px dashed orange;
+}
+
+#infobar .info-left button img{
+  margin: auto;
+}
+
 #infobar .info-right{
   float: right;
+  height: 60%;
+  width: 40%;
+  background-color: rgba(255, 0, 255, 0.15);
+  border: 1px dashed magenta;
+  color: #fff;
+  font-size: 1em;
+  padding: 18px 5px;
+}
+
+#infobar .info-right .numbers{
+  width: 50%;
   height: 100%;
-  width: 30%;
-  background-color: red;
-  opacity: 0.5;
+  font-size: 1.05em;
+  display: inline-flex;
+}
+
+#infobar .info-right .numbers li{
+  height: 50%;
+  margin: 2px 6px;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.t-mars{
+  color: red;
+  font-weight: bold;
+}
+
+.t-km{
+  color: orange;
+  font-weight: bold;
+}
+
+#infobar .info-right .percent{
+  font-size: 1.5em;
+  width: 45%;
+  height: 100%;
+  display: inline-flex;
+  float: right;
+}
+
+#infobar .info-right .percent li{
+  width: 100%;
+  height: 45%;
+}
+
+#infobar .info-right .percent .p-timer{
+  font-size: 3em;
+  font-weight: bold;
+  color: yellow;
 }
 
 .rocket-hide{
   display: none;
+}
+
+#cat-photo{
+  display: inline-flex;
+  height: 95%;
+  width: 30%;
+}
+
+#cat-photo img{
+  margin: auto;
+}
+
+#mission-text{
+  display: inline-flex;
+  height: 88%;
+  width: 68%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto;
 }
