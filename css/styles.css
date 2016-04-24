@@ -1598,6 +1598,10 @@ body {
 
 
 /******************PRUEBAS*********************/
+body{
+  height: 768px!important;
+  width: 1024px!important;
+}
 .wrapper{
   position: absolute;
   height: 100%;
@@ -1640,7 +1644,7 @@ body {
   width: 60px;
   height: 60px;
   display: inline-flex;
-  margin: 5px 20px;
+  margin: 5px 45px;
   background-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -1738,4 +1742,8 @@ body {
   width: 68%;
   background-color: rgba(0, 0, 0, 0.5);
   margin: auto;
+  position: absolute;
+  padding: 10px;
+  color: #fff;
+  font-size: 1.5em;
 }
