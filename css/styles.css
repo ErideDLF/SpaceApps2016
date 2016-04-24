@@ -1667,18 +1667,30 @@ body{
 
 #infobar .info-left button.red{
   border: 1px dashed red;
+}#infobar .info-left button.red:hover{
+  border: 2px dashed red;
+  background-color: rgba(255, 0, 0, 0.15);
 }
 
 #infobar .info-left button.green{
   border: 1px dashed green;
+}#infobar .info-left button.green:hover{
+  border: 2px dashed green;
+  background-color: rgba(0, 128, 0, 0.15);
 }
 
 #infobar .info-left button.blue{
   border: 1px dashed blue;
+}#infobar .info-left button.blue:hover{
+  border: 2px dashed blue;
+  background-color: rgba(0, 0, 255, 0.16);
 }
 
 #infobar .info-left button.orange{
   border: 1px dashed orange;
+}#infobar .info-left button.orange:hover{
+  border: 2px dashed orange;
+  background-color: rgba(255, 165, 0, 0.15)
 }
 
 #infobar .info-left button img{
